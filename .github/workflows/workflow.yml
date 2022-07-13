@@ -5,13 +5,10 @@ name: Build, Release app to Github Pages and Firebase Hosting
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
 on:
-  push:
-    branches:
-      - deploy
   pull_request:
     branches:
       - deploy
-      
+
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -36,7 +33,7 @@ jobs:
       - name: deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.REPO_SCEOP_DEPLOY_TOKEN }}
+          github_token: ${{ secrets.REPO_SCOPE_DEPLOY_TOKEN }}
           publish_dir: ./build/web
       - name: Deploy to Firebase Hosting
         uses: w9jds/firebase-action@master
