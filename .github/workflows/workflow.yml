@@ -1,17 +1,13 @@
-# This is a basic workflow to help you get started with Actions
+
 
 name: Build, Release app to Github Pages and Firebase Hosting
-# name: Test, Build and Release apk
-# Controls when the action will run. Triggers the workflow on push or pull request
-# events but only for the master branch
 on:
+  # PR 할 때, 동작
   pull_request:
     branches:
       - deploy
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
   build:
     runs-on: ubuntu-latest
     steps:
@@ -24,15 +20,15 @@ jobs:
           channel: 'dev'
       - name: 'Run flutter pub get'
         run: flutter pub get
-      #    - name: 'Run Test(s)'
-      #      run: flutter test
       - name: Enable flutter web
         run: flutter config --enable-web
       - name: 'Build Web App'
         run: flutter build web
+      # 깃 허브 배포
       - name: deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
+          # Github Page 에 배포하기 위한 키
           github_token: ${{ secrets.REPO_SCOPE_DEPLOY_TOKEN }}
           publish_dir: ./build/web
       - name: Deploy to Firebase Hosting
