@@ -67,7 +67,7 @@ class _EntryScreenWidgetState extends State<EntryScreenWidget> {
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Text(
-                    'Sign-in with Email/Password (4)',
+                    'Sign-in with Email/Password 5',
                     style: FlutterFlowTheme.of(context).bodyText1,
                   ),
                   Container(
