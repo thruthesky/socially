@@ -41,7 +41,7 @@ class _EntryScreenWidgetState extends State<EntryScreenWidget> {
         backgroundColor: FlutterFlowTheme.of(context).primaryColor,
         automaticallyImplyLeading: false,
         title: Text(
-          'Sign-in 8',
+          'Sign-in 9',
           style: FlutterFlowTheme.of(context).title2.override(
                 fontFamily: 'Poppins',
                 color: Colors.white,
@@ -67,7 +67,7 @@ class _EntryScreenWidgetState extends State<EntryScreenWidget> {
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Text(
-                    'Sign-in with Email/Password 8',
+                    'Sign-in with Email/Password',
                     style: FlutterFlowTheme.of(context).bodyText1,
                   ),
                   Container(
