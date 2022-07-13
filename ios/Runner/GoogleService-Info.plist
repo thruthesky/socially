@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>581403974759-sbfurblkrgsuoonveb23hpq3ce4iud4e.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.581403974759-sbfurblkrgsuoonveb23hpq3ce4iud4e</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>581403974759-5s2k664in4i57d8kdmi1nukdt0ec9i9l.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyA_72FT0wrMqUHovuS5Zm4T42BHbF5xEOY</string>
+	<key>GCM_SENDER_ID</key>
+	<string>581403974759</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.withcenter.socially</string>
+	<key>PROJECT_ID</key>
+	<string>sociallyfire</string>
+	<key>STORAGE_BUCKET</key>
+	<string>sociallyfire.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:581403974759:ios:318ee5bdaa034349df08c2</string>
+	<key>DATABASE_URL</key>
+	<string>https://sociallyfire-default-rtdb.asia-southeast1.firebasedatabase.app</string>
+</dict>
+</plist>
