@@ -3,6 +3,8 @@ name: 플로 웹 배포
 on:
   push:
     branches: deploy
+  pull_request:
+    branches: deploy
 
 jobs:
   build:
