@@ -31,9 +31,9 @@ jobs:
           # Github Page 에 배포하기 위한 키
           github_token: ${{ secrets.REPO_SCOPE_DEPLOY_TOKEN }}
           publish_dir: ./build/web
-      - name: Deploy to Firebase Hosting
-        uses: w9jds/firebase-action@master
-        with:
-          args: deploy --only hosting
-        env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+      # - name: Deploy to Firebase Hosting
+      #   uses: w9jds/firebase-action@master
+      #   with:
+      #     args: deploy --only hosting
+      #   env:
+      #     FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
