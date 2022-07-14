@@ -13,14 +13,6 @@ abstract class UsersRecord implements Built<UsersRecord, UsersRecordBuilder> {
   String get email;
 
   @nullable
-  @BuiltValueField(wireName: 'display_name')
-  String get displayName;
-
-  @nullable
-  @BuiltValueField(wireName: 'photo_url')
-  String get photoUrl;
-
-  @nullable
   String get uid;
 
   @nullable
@@ -41,17 +33,61 @@ abstract class UsersRecord implements Built<UsersRecord, UsersRecordBuilder> {
   DateTime get registeredAt;
 
   @nullable
+  int get birthday;
+
+  @nullable
+  String get gender;
+
+  @nullable
+  bool get hasBirthday;
+
+  @nullable
+  bool get hasDisplayName;
+
+  @nullable
+  bool get hasFirstName;
+
+  @nullable
+  bool get hasGender;
+
+  @nullable
+  bool get hasLastName;
+
+  @nullable
+  bool get hasPhotoUrl;
+
+  @nullable
+  String get middleName;
+
+  @nullable
+  @BuiltValueField(wireName: 'display_name')
+  String get displayName;
+
+  @nullable
+  @BuiltValueField(wireName: 'photo_url')
+  String get photoUrl;
+
+  @nullable
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference get reference;
 
   static void _initializeBuilder(UsersRecordBuilder builder) => builder
     ..email = ''
-    ..displayName = ''
-    ..photoUrl = ''
     ..uid = ''
     ..phoneNumber = ''
     ..firstName = ''
-    ..lastName = '';
+    ..lastName = ''
+    ..birthday = 0
+    ..gender = ''
+    ..hasBirthday = false
+    ..hasDisplayName = false
+    ..hasFirstName = false
+    ..hasGender = false
+    ..hasLastName = false
+    ..hasPhotoUrl = false
+    ..middleName = ''
+    ..displayName = ''
+    ..photoUrl = '';
 
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('users');
@@ -76,24 +112,42 @@ abstract class UsersRecord implements Built<UsersRecord, UsersRecordBuilder> {
 
 Map<String, dynamic> createUsersRecordData({
   String email,
-  String displayName,
-  String photoUrl,
   String uid,
   DateTime createdTime,
   String phoneNumber,
   String firstName,
   String lastName,
   DateTime registeredAt,
+  int birthday,
+  String gender,
+  bool hasBirthday,
+  bool hasDisplayName,
+  bool hasFirstName,
+  bool hasGender,
+  bool hasLastName,
+  bool hasPhotoUrl,
+  String middleName,
+  String displayName,
+  String photoUrl,
 }) =>
     serializers.toFirestore(
         UsersRecord.serializer,
         UsersRecord((u) => u
           ..email = email
-          ..displayName = displayName
-          ..photoUrl = photoUrl
           ..uid = uid
           ..createdTime = createdTime
           ..phoneNumber = phoneNumber
           ..firstName = firstName
           ..lastName = lastName
-          ..registeredAt = registeredAt));
+          ..registeredAt = registeredAt
+          ..birthday = birthday
+          ..gender = gender
+          ..hasBirthday = hasBirthday
+          ..hasDisplayName = hasDisplayName
+          ..hasFirstName = hasFirstName
+          ..hasGender = hasGender
+          ..hasLastName = hasLastName
+          ..hasPhotoUrl = hasPhotoUrl
+          ..middleName = middleName
+          ..displayName = displayName
+          ..photoUrl = photoUrl));
