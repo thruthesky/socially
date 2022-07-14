@@ -1,8 +1,8 @@
 name: 플러터플로 클릭 한번으로 웹 배포하기
 on:
-  push:
-    branches:
-      - deploy
+  # push:
+  #   branches:
+  #     - deploy
   # flutterflow branch 에서 deploy branch 로 PR 할 때, 동작
   pull_request:
     branches:
@@ -32,9 +32,3 @@ jobs:
           # Github Page 에 배포하기 위한 키
           github_token: ${{ secrets.REPO_SCOPE_DEPLOY_TOKEN }}
           publish_dir: ./build/web
-      # - name: Deploy to Firebase Hosting
-      #   uses: w9jds/firebase-action@master
-      #   with:
-      #     args: deploy --only hosting
-      #   env:
-      #     FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
