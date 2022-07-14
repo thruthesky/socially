@@ -41,7 +41,7 @@ class _EntryScreenWidgetState extends State<EntryScreenWidget> {
         backgroundColor: FlutterFlowTheme.of(context).primaryColor,
         automaticallyImplyLeading: false,
         title: Text(
-          'Sign-in 14',
+          'Sign-in (2) - 1',
           style: FlutterFlowTheme.of(context).title2.override(
                 fontFamily: 'Poppins',
                 color: Colors.white,
