@@ -26,20 +26,6 @@ class _$UsersRecordSerializer implements StructuredSerializer<UsersRecord> {
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    value = object.displayName;
-    if (value != null) {
-      result
-        ..add('display_name')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
-    value = object.photoUrl;
-    if (value != null) {
-      result
-        ..add('photo_url')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
     value = object.uid;
     if (value != null) {
       result
@@ -82,6 +68,82 @@ class _$UsersRecordSerializer implements StructuredSerializer<UsersRecord> {
         ..add(serializers.serialize(value,
             specifiedType: const FullType(DateTime)));
     }
+    value = object.birthday;
+    if (value != null) {
+      result
+        ..add('birthday')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
+    value = object.gender;
+    if (value != null) {
+      result
+        ..add('gender')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.hasBirthday;
+    if (value != null) {
+      result
+        ..add('hasBirthday')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
+    value = object.hasDisplayName;
+    if (value != null) {
+      result
+        ..add('hasDisplayName')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
+    value = object.hasFirstName;
+    if (value != null) {
+      result
+        ..add('hasFirstName')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
+    value = object.hasGender;
+    if (value != null) {
+      result
+        ..add('hasGender')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
+    value = object.hasLastName;
+    if (value != null) {
+      result
+        ..add('hasLastName')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
+    value = object.hasPhotoUrl;
+    if (value != null) {
+      result
+        ..add('hasPhotoUrl')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
+    value = object.middleName;
+    if (value != null) {
+      result
+        ..add('middleName')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.displayName;
+    if (value != null) {
+      result
+        ..add('display_name')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.photoUrl;
+    if (value != null) {
+      result
+        ..add('photo_url')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
     value = object.reference;
     if (value != null) {
       result
@@ -108,14 +170,6 @@ class _$UsersRecordSerializer implements StructuredSerializer<UsersRecord> {
           result.email = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
           break;
-        case 'display_name':
-          result.displayName = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          break;
-        case 'photo_url':
-          result.photoUrl = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          break;
         case 'uid':
           result.uid = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
@@ -140,6 +194,50 @@ class _$UsersRecordSerializer implements StructuredSerializer<UsersRecord> {
           result.registeredAt = serializers.deserialize(value,
               specifiedType: const FullType(DateTime)) as DateTime;
           break;
+        case 'birthday':
+          result.birthday = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int;
+          break;
+        case 'gender':
+          result.gender = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
+        case 'hasBirthday':
+          result.hasBirthday = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool;
+          break;
+        case 'hasDisplayName':
+          result.hasDisplayName = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool;
+          break;
+        case 'hasFirstName':
+          result.hasFirstName = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool;
+          break;
+        case 'hasGender':
+          result.hasGender = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool;
+          break;
+        case 'hasLastName':
+          result.hasLastName = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool;
+          break;
+        case 'hasPhotoUrl':
+          result.hasPhotoUrl = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool;
+          break;
+        case 'middleName':
+          result.middleName = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
+        case 'display_name':
+          result.displayName = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
+        case 'photo_url':
+          result.photoUrl = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
         case 'Document__Reference__Field':
           result.reference = serializers.deserialize(value,
                   specifiedType: const FullType(
@@ -157,10 +255,6 @@ class _$UsersRecord extends UsersRecord {
   @override
   final String email;
   @override
-  final String displayName;
-  @override
-  final String photoUrl;
-  @override
   final String uid;
   @override
   final DateTime createdTime;
@@ -173,6 +267,28 @@ class _$UsersRecord extends UsersRecord {
   @override
   final DateTime registeredAt;
   @override
+  final int birthday;
+  @override
+  final String gender;
+  @override
+  final bool hasBirthday;
+  @override
+  final bool hasDisplayName;
+  @override
+  final bool hasFirstName;
+  @override
+  final bool hasGender;
+  @override
+  final bool hasLastName;
+  @override
+  final bool hasPhotoUrl;
+  @override
+  final String middleName;
+  @override
+  final String displayName;
+  @override
+  final String photoUrl;
+  @override
   final DocumentReference<Object> reference;
 
   factory _$UsersRecord([void Function(UsersRecordBuilder) updates]) =>
@@ -180,14 +296,23 @@ class _$UsersRecord extends UsersRecord {
 
   _$UsersRecord._(
       {this.email,
-      this.displayName,
-      this.photoUrl,
       this.uid,
       this.createdTime,
       this.phoneNumber,
       this.firstName,
       this.lastName,
       this.registeredAt,
+      this.birthday,
+      this.gender,
+      this.hasBirthday,
+      this.hasDisplayName,
+      this.hasFirstName,
+      this.hasGender,
+      this.hasLastName,
+      this.hasPhotoUrl,
+      this.middleName,
+      this.displayName,
+      this.photoUrl,
       this.reference})
       : super._();
 
@@ -203,14 +328,23 @@ class _$UsersRecord extends UsersRecord {
     if (identical(other, this)) return true;
     return other is UsersRecord &&
         email == other.email &&
-        displayName == other.displayName &&
-        photoUrl == other.photoUrl &&
         uid == other.uid &&
         createdTime == other.createdTime &&
         phoneNumber == other.phoneNumber &&
         firstName == other.firstName &&
         lastName == other.lastName &&
         registeredAt == other.registeredAt &&
+        birthday == other.birthday &&
+        gender == other.gender &&
+        hasBirthday == other.hasBirthday &&
+        hasDisplayName == other.hasDisplayName &&
+        hasFirstName == other.hasFirstName &&
+        hasGender == other.hasGender &&
+        hasLastName == other.hasLastName &&
+        hasPhotoUrl == other.hasPhotoUrl &&
+        middleName == other.middleName &&
+        displayName == other.displayName &&
+        photoUrl == other.photoUrl &&
         reference == other.reference;
   }
 
@@ -224,15 +358,41 @@ class _$UsersRecord extends UsersRecord {
                         $jc(
                             $jc(
                                 $jc(
-                                    $jc($jc(0, email.hashCode),
-                                        displayName.hashCode),
-                                    photoUrl.hashCode),
-                                uid.hashCode),
-                            createdTime.hashCode),
-                        phoneNumber.hashCode),
-                    firstName.hashCode),
-                lastName.hashCode),
-            registeredAt.hashCode),
+                                    $jc(
+                                        $jc(
+                                            $jc(
+                                                $jc(
+                                                    $jc(
+                                                        $jc(
+                                                            $jc(
+                                                                $jc(
+                                                                    $jc(
+                                                                        $jc(
+                                                                            $jc(
+                                                                                0,
+                                                                                email
+                                                                                    .hashCode),
+                                                                            uid
+                                                                                .hashCode),
+                                                                        createdTime
+                                                                            .hashCode),
+                                                                    phoneNumber
+                                                                        .hashCode),
+                                                                firstName
+                                                                    .hashCode),
+                                                            lastName.hashCode),
+                                                        registeredAt.hashCode),
+                                                    birthday.hashCode),
+                                                gender.hashCode),
+                                            hasBirthday.hashCode),
+                                        hasDisplayName.hashCode),
+                                    hasFirstName.hashCode),
+                                hasGender.hashCode),
+                            hasLastName.hashCode),
+                        hasPhotoUrl.hashCode),
+                    middleName.hashCode),
+                displayName.hashCode),
+            photoUrl.hashCode),
         reference.hashCode));
   }
 
@@ -240,14 +400,23 @@ class _$UsersRecord extends UsersRecord {
   String toString() {
     return (newBuiltValueToStringHelper('UsersRecord')
           ..add('email', email)
-          ..add('displayName', displayName)
-          ..add('photoUrl', photoUrl)
           ..add('uid', uid)
           ..add('createdTime', createdTime)
           ..add('phoneNumber', phoneNumber)
           ..add('firstName', firstName)
           ..add('lastName', lastName)
           ..add('registeredAt', registeredAt)
+          ..add('birthday', birthday)
+          ..add('gender', gender)
+          ..add('hasBirthday', hasBirthday)
+          ..add('hasDisplayName', hasDisplayName)
+          ..add('hasFirstName', hasFirstName)
+          ..add('hasGender', hasGender)
+          ..add('hasLastName', hasLastName)
+          ..add('hasPhotoUrl', hasPhotoUrl)
+          ..add('middleName', middleName)
+          ..add('displayName', displayName)
+          ..add('photoUrl', photoUrl)
           ..add('reference', reference))
         .toString();
   }
@@ -259,14 +428,6 @@ class UsersRecordBuilder implements Builder<UsersRecord, UsersRecordBuilder> {
   String _email;
   String get email => _$this._email;
   set email(String email) => _$this._email = email;
-
-  String _displayName;
-  String get displayName => _$this._displayName;
-  set displayName(String displayName) => _$this._displayName = displayName;
-
-  String _photoUrl;
-  String get photoUrl => _$this._photoUrl;
-  set photoUrl(String photoUrl) => _$this._photoUrl = photoUrl;
 
   String _uid;
   String get uid => _$this._uid;
@@ -293,6 +454,51 @@ class UsersRecordBuilder implements Builder<UsersRecord, UsersRecordBuilder> {
   set registeredAt(DateTime registeredAt) =>
       _$this._registeredAt = registeredAt;
 
+  int _birthday;
+  int get birthday => _$this._birthday;
+  set birthday(int birthday) => _$this._birthday = birthday;
+
+  String _gender;
+  String get gender => _$this._gender;
+  set gender(String gender) => _$this._gender = gender;
+
+  bool _hasBirthday;
+  bool get hasBirthday => _$this._hasBirthday;
+  set hasBirthday(bool hasBirthday) => _$this._hasBirthday = hasBirthday;
+
+  bool _hasDisplayName;
+  bool get hasDisplayName => _$this._hasDisplayName;
+  set hasDisplayName(bool hasDisplayName) =>
+      _$this._hasDisplayName = hasDisplayName;
+
+  bool _hasFirstName;
+  bool get hasFirstName => _$this._hasFirstName;
+  set hasFirstName(bool hasFirstName) => _$this._hasFirstName = hasFirstName;
+
+  bool _hasGender;
+  bool get hasGender => _$this._hasGender;
+  set hasGender(bool hasGender) => _$this._hasGender = hasGender;
+
+  bool _hasLastName;
+  bool get hasLastName => _$this._hasLastName;
+  set hasLastName(bool hasLastName) => _$this._hasLastName = hasLastName;
+
+  bool _hasPhotoUrl;
+  bool get hasPhotoUrl => _$this._hasPhotoUrl;
+  set hasPhotoUrl(bool hasPhotoUrl) => _$this._hasPhotoUrl = hasPhotoUrl;
+
+  String _middleName;
+  String get middleName => _$this._middleName;
+  set middleName(String middleName) => _$this._middleName = middleName;
+
+  String _displayName;
+  String get displayName => _$this._displayName;
+  set displayName(String displayName) => _$this._displayName = displayName;
+
+  String _photoUrl;
+  String get photoUrl => _$this._photoUrl;
+  set photoUrl(String photoUrl) => _$this._photoUrl = photoUrl;
+
   DocumentReference<Object> _reference;
   DocumentReference<Object> get reference => _$this._reference;
   set reference(DocumentReference<Object> reference) =>
@@ -306,14 +512,23 @@ class UsersRecordBuilder implements Builder<UsersRecord, UsersRecordBuilder> {
     final $v = _$v;
     if ($v != null) {
       _email = $v.email;
-      _displayName = $v.displayName;
-      _photoUrl = $v.photoUrl;
       _uid = $v.uid;
       _createdTime = $v.createdTime;
       _phoneNumber = $v.phoneNumber;
       _firstName = $v.firstName;
       _lastName = $v.lastName;
       _registeredAt = $v.registeredAt;
+      _birthday = $v.birthday;
+      _gender = $v.gender;
+      _hasBirthday = $v.hasBirthday;
+      _hasDisplayName = $v.hasDisplayName;
+      _hasFirstName = $v.hasFirstName;
+      _hasGender = $v.hasGender;
+      _hasLastName = $v.hasLastName;
+      _hasPhotoUrl = $v.hasPhotoUrl;
+      _middleName = $v.middleName;
+      _displayName = $v.displayName;
+      _photoUrl = $v.photoUrl;
       _reference = $v.reference;
       _$v = null;
     }
@@ -336,14 +551,23 @@ class UsersRecordBuilder implements Builder<UsersRecord, UsersRecordBuilder> {
     final _$result = _$v ??
         new _$UsersRecord._(
             email: email,
-            displayName: displayName,
-            photoUrl: photoUrl,
             uid: uid,
             createdTime: createdTime,
             phoneNumber: phoneNumber,
             firstName: firstName,
             lastName: lastName,
             registeredAt: registeredAt,
+            birthday: birthday,
+            gender: gender,
+            hasBirthday: hasBirthday,
+            hasDisplayName: hasDisplayName,
+            hasFirstName: hasFirstName,
+            hasGender: hasGender,
+            hasLastName: hasLastName,
+            hasPhotoUrl: hasPhotoUrl,
+            middleName: middleName,
+            displayName: displayName,
+            photoUrl: photoUrl,
             reference: reference);
     replace(_$result);
     return _$result;
