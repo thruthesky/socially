@@ -2,8 +2,8 @@
 
 name: 플러터 플로 클릭 한번으로 웹 배포하기
 on:
-  # PR 할 때, 동작
-  push:
+  # deploy branch 로 PR 할 때, 동작
+  pull_request:
     branches:
       - flutterflow
 
