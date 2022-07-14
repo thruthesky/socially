@@ -1,28 +1,4 @@
-# name: 플로 웹 배포
-
-# on:
-#   push:
-#     branches: deploy
-#   pull_request:
-#     branches: deploy
-
-# jobs:
-#   build:
-#     runs-on: ubuntu-latest
-
-#     steps:
-#       - uses: actions/checkout@v2 # Only works with v2
-#       - uses: subosito/flutter-action@v1
-#       - uses: bluefireteam/flutter-gh-pages@v7
-#       - uses: bluefireteam/flutter-gh-pages@v7
-#       - uses: bluefireteam/flutter-gh-pages@v7
-#         with:
-#           webRenderer: canvaskit
-#       - uses: bluefireteam/flutter-gh-pages@v7
-#         with:
-#           baseHref: /socially/
-
-name: 플러터 플로 클릭 한번으로 웹 배포하기
+name: 플러터플로 클릭 한번으로 웹 배포하기
 on:
   push:
     branches:
