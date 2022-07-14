@@ -3,9 +3,9 @@
 name: Build, Release app to Github Pages and Firebase Hosting
 on:
   # PR 할 때, 동작
-  pull_request:
+  push:
     branches:
-      - deploy
+      - flutterflow
 
 jobs:
   build:
@@ -21,7 +21,7 @@ jobs:
       - name: 'Run flutter pub get'
         run: flutter pub get
       - name: Enable flutter web
-        run: flutter config --enable-web
+        run: flutter config --enable-web --base-href "/socially/"
       - name: 'Build Web App'
         run: flutter build web
       # 깃 허브 배포
